@@ -1,0 +1,54 @@
+### Animation ###
+import { trigger, state, style, animate, transition } from '@angular/animations'; // Animation
+
+animations: [
+    trigger('changeDivPosition', [
+      state('initial', style({
+        left: '0',
+        borderRight: 'none',       // Post Div closed
+        borderRadius: 'auto'
+      })),
+      state('final', style({
+        left: '-55%',
+        borderRight: 'solid 10px #57ADBD',      // Post Div Opend
+        borderRadius: '0'
+      })),
+      transition('initial => final', animate('200ms')),
+      transition('final => initial', animate('200ms'))
+    ])
+  ]
+
+// Animation State Variables
+currentState = 'initial';
+
+// Animation State Change
+changeState(){
+  this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+}
+
+
+### Animation Elements ###
+<li *ngFor="let showPopup of postList; let postIndex = index" (click)="changeState()">
+  <div class="post-content" [@changeDivPosition]="currentState">
+    <div class="info-img">
+      <img src="/assets/images/BIO.png" alt="template">
+    </div>
+    <div class="post-text">
+      <div class="top">
+        <small>{{showPopup.time}}</small> <small>by: {{showPopup.from}}</small>
+      </div>
+      <p>{{showPopup.content}}</p>
+    </div>
+  </div>
+  <div class="options">
+    <button [ngStyle]="showPopup.isWatch && {'opacity': '1'}" (click)="watchPost(postIndex)">
+      <img src="/assets/images/watch.ng" alt="watch">
+    </button>
+    <button [ngStyle]="showPopup.isLiked && {'opacity': '1'}" (click)="likePost(postIndex)">
+      <img src="/assets/images/like.ng" alt="like">
+    </button>
+    <button (click)="removePost(postIndex)">
+      <img src="/assets/images/remove.ng" alt="remove">
+    </button>
+  </div>
+</li>

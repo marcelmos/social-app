@@ -1,0 +1,14 @@
+@font-face{
+  font-family: blackjar;
+  src: url("/assets/fonts/BLACKJAR.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: New Cicle Fina;
+  src: url("/assets/fonts/New Cicle Fina.otf") format("truetype");
+}
+
+@font-face {
+  font-family: New Cicle Fina Italic;
+  src: url("/assets/fonts/New Cicle Fina Italic.otf") format("truetype");
+}

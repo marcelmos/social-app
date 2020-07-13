@@ -1,0 +1,30 @@
+<nav [@profileAnim]="menuStatus.currentState">
+  <a href="#" (click)="menuStatus.navMenu()">
+    <img src="/assets/images/nav/menu.png" alt="menu">
+  </a>
+  <button (click)="menuStatus.isOpend = 'main'">
+    <p class="logo">uilove</p>
+  </button>
+  <a href="#">
+    <img src="/assets/images/nav/BIO.png" alt="BIO">
+  </a>
+</nav>
+
+<div class="container" [@profileAnim]="menuStatus.currentState">
+  <div class="popups" >
+    <ul>
+      <ng-container *ngIf="inboxContent.length > 0">
+        <li *ngFor="let showMail of inboxContent">
+          <div class="post-content" >
+            <div class="post-text">
+              <div class="top">
+                <small>From: {{showMail.from}}</small> <small>Get: {{showMail.date}}</small>
+              </div>
+              <p>Title: {{showMail.title}}</p>
+            </div>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
