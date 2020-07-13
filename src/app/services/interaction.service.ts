@@ -4,14 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class InteractionService {
-
-
   // Menu var
   isActivated: boolean;
   isOpend = 'main';
 
   // Animation State Variablesą
-  currentState = 'final';
+  currentState = 'initial';
 
 
   constructor() { }

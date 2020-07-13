@@ -8,7 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { InteractionService } from './services/interaction.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InboxComponent } from './inbox/inbox.component';
-import { NavComponent } from './nav/nav.component';  // Animation Module Import
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
