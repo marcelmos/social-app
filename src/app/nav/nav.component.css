@@ -1,0 +1,42 @@
+/* MAIN NAV STYLE */
+nav{
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  padding: 15px;
+  padding-top: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+}
+
+/* NAV BUTTON */
+nav>a:active>img{
+  transition: transform .1s;
+  transform: scale(.6);
+}
+
+/* LOGO */
+nav>button>p.logo{
+  padding: 0;
+  display: flex;
+}
+
+.logo{
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.logo:active{
+  transition: transform .1s;
+  transform: scale(.8);
+}
+
+p.logo::before{
+  content: url("/assets/images/nav/logoShape.png");
+  transform: scale(.6);
+  margin-right: 2px;
+  position: relative;
+  top: 5px;
+}

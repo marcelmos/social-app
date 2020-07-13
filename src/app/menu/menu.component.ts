@@ -16,8 +16,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       })),
       transition('initial => final', animate('200ms')),
       transition('final => initial', animate('200ms'))
-    ])
-  ]
+    ])]
 })
 export class MenuComponent implements OnInit {
 

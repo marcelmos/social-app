@@ -13,42 +13,40 @@
       </p>
     </div>
 
-    <div class="menu-buttons">
-      <ul>
-        <li class="nav-item"  (click)="menuStatus.isOpend = 'inbox'; menuStatus.currentState = 'initial'">
-          <img class="menu-icon" src="/assets/images/menu/mail.png" alt="inbox">
-          <div class="justify">
-            <span>Mail Inbox</span>
-            <span class="notification" *ngIf="notificationInbox > 0">{{notificationInbox}}</span>
-          </div>
-        </li>
-        <li class="nav-item">
-          <img class="menu-icon" src="/assets/images/menu/friends.png" alt="friends">
-          <div class="justify">
-            <span>Friends</span>
-            <span class="notification" *ngIf="notificationFriends > 0">{{notificationFriends}}</span>
-          </div>
-        </li>
-        <li class="nav-item">
-          <img class="menu-icon" src="/assets/images/menu/invites.png" alt="invites">
-          <div class="justify">
-            <span>Invites</span>
-            <span class="notification" *ngIf="notificationInvites > 0">{{notificationInvites}}</span>
-          </div>
-        </li>
-        <li class="nav-item">
-          <img class="menu-icon" src="/assets/images/menu/bookmark.png" alt="bookmark">
-          <span>Bookmarks</span>
-        </li>
-        <li class="nav-item">
-          <img class="menu-icon" src="/assets/images/menu/settings.png" alt="settings">
-          <span>Account Settings</span>
-        </li>
-        <li class="nav-item signout">
-          <img src="/assets/images/menu/signout.png" alt="signout">
-        </li>
-      </ul>
-    </div>
+    <ul class="menu-buttons">
+      <li class="nav-item"  (click)="menuStatus.isOpend = 'inbox'; menuStatus.currentState = 'initial'">
+        <img class="menu-icon" src="/assets/images/menu/inbox.png" alt="inbox">
+        <div class="justify">
+          <span>Mail Inbox</span>
+          <span class="notification" *ngIf="notificationInbox > 0">{{notificationInbox}}</span>
+        </div>
+      </li>
+      <li class="nav-item">
+        <img class="menu-icon" src="/assets/images/menu/friends.png" alt="friends">
+        <div class="justify">
+          <span>Friends</span>
+          <span class="notification" *ngIf="notificationFriends > 0">{{notificationFriends}}</span>
+        </div>
+      </li>
+      <li class="nav-item">
+        <img class="menu-icon" src="/assets/images/menu/invites.png" alt="invites">
+        <div class="justify">
+          <span>Invites</span>
+          <span class="notification" *ngIf="notificationInvites > 0">{{notificationInvites}}</span>
+        </div>
+      </li>
+      <li class="nav-item">
+        <img class="menu-icon" src="/assets/images/menu/bookmark.png" alt="bookmark">
+        <span>Bookmarks</span>
+      </li>
+      <li class="nav-item">
+        <img class="menu-icon" src="/assets/images/menu/settings.png" alt="settings">
+        <span>Account Settings</span>
+      </li>
+      <li class="nav-item signout">
+        <img src="/assets/images/menu/signout.png" alt="signout">
+      </li>
+    </ul>
   </div>
 
   <!-- FREE SPACE (CLOSE MENU) -->

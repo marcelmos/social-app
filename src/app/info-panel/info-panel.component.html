@@ -1,91 +1,72 @@
 <!-- <div class="content" [ngStyle]="menuStatus.isActivated && {'transform': 'translateX(80%)'}"> -->
+<div class="container"  [@profileAnim]="menuStatus.currentState">
+  <div class="hero">
+    <img class="hero-img" src="/assets/images/avatar.jpg" alt="avatar">
 
-  <nav [@profileAnim]="menuStatus.currentState">
-    <a href="#" (click)="menuStatus.navMenu()">
-      <img src="/assets/images/nav/menu.png" alt="menu">
-    </a>
-    <button (click)="menuStatus.isOpend = 'main'">
-      <p class="logo">uilove</p>
-    </button>
-    <a href="#">
-      <img src="/assets/images/nav/BIO.png" alt="BIO">
-    </a>
-  </nav>
+    <div class="content-hero">
+      <div class="header-text">
+        <p>Principal <span class="text-color">Designer</span></p>
+        <p class="profile-text">
+          who believe in simplicity.
+          <span class="loveIn text-color">love with UI / GUI / UX</span>
+        </p>
+      </div>
 
-
-
-  <div class="container" [@profileAnim]="menuStatus.currentState">
-    <div class="hero">
-      <img class="hero-img" src="/assets/images/avatar.jpg" alt="avatar">
-
-      <div class="content-hero">
-        <div class="header-text">
-          <p>Principal <span class="text-color">Designer</span></p>
-          <p class="profile-text">
-            who believe in simplicity.
-            <span class="loveIn text-color">love with UI / GUI / UX</span>
-          </p>
-        </div>
-
-        <div class="social">
-          <!-- DRIBBBLE -->
-          <a href="#">
-            <span *ngIf="dribbbleMsg > 0" class="notification">{{dribbbleMsg}}</span>
-            <img src="/assets/images/social/dribbble-logo.png" [ngStyle]="dribbbleMsg == 0 && {'opacity': '.6'}" alt="dribbble">
-          </a>
-          <!-- FORRST -->
-          <a href="#">
-            <span *ngIf="forrstMsg > 0" class="notification">{{forrstMsg}}</span>
-            <img src="/assets/images/social/forrst-logo.png" [ngStyle]="forrstMsg == 0  && {'opacity': '.6'}" alt="forrst">
-          </a>
-          <!-- BE -->
-          <a href="#">
-            <span *ngIf="beMsg > 0" class="notification">{{beMsg}}</span>
-            <img src="/assets/images/social/be-logo.png" [ngStyle]="beMsg == 0 && {'opacity': '.6'}" alt="Be">
-          </a>
-        </div>
+      <div class="social">
+        <!-- DRIBBBLE -->
+        <a href="#">
+          <span *ngIf="dribbbleMsg > 0" class="notification">{{dribbbleMsg}}</span>
+          <img src="/assets/images/social/dribbble-logo.png" [ngStyle]="dribbbleMsg == 0 && {'opacity': '.6'}" alt="dribbble">
+        </a>
+        <!-- FORRST -->
+        <a href="#">
+          <span *ngIf="forrstMsg > 0" class="notification">{{forrstMsg}}</span>
+          <img src="/assets/images/social/forrst-logo.png" [ngStyle]="forrstMsg == 0  && {'opacity': '.6'}" alt="forrst">
+        </a>
+        <!-- BE -->
+        <a href="#">
+          <span *ngIf="beMsg > 0" class="notification">{{beMsg}}</span>
+          <img src="/assets/images/social/be-logo.png" [ngStyle]="beMsg == 0 && {'opacity': '.6'}" alt="Be">
+        </a>
       </div>
     </div>
-
-    <div class="popups" >
-      <ul>
-        <ng-container *ngIf="postList.length > 0; else noPopups">
-          <li *ngFor="let showPopup of postList; let postIndex = index">
-            <div class="post-content" >
-              <div class="info-img">
-                <img src="{{showPopup.image}}" alt="post image">
-              </div>
-              <div class="post-text">
-                <div class="top">
-                  <small>{{showPopup.time}}</small> <small>by: {{showPopup.from}}</small>
-                </div>
-                <p>{{showPopup.content}}</p>
-              </div>
-            </div>
-            <div class="options">
-              <button [ngStyle]="showPopup.isWatch && {'opacity': '1'}" (click)="watchPost(postIndex)">
-                <img src="/assets/images/watch.png" alt="watch">
-              </button>
-              <button [ngStyle]="showPopup.isLiked && {'opacity': '1'}" (click)="likePost(postIndex)">
-                <img src="/assets/images/like.png" alt="like">
-              </button>
-              <button (click)="removePost(postIndex)">
-                <img src="/assets/images/remove.png" alt="remove">
-              </button>
-            </div>
-          </li>
-        </ng-container>
-      </ul>
-    </div>
   </div>
+
+  <ul class="post-container">
+    <ng-container *ngIf="postList.length > 0; else noPopups">
+      <li *ngFor="let showPopup of postList; let postIndex = index">
+        <div class="post-content" >
+          <div class="info-img">
+            <img src="{{showPopup.image}}" alt="post image">
+          </div>
+          <div class="post-text">
+            <div class="top-part">
+              <small>{{showPopup.time}}</small> <small>by: {{showPopup.from}}</small>
+            </div>
+            <p>{{showPopup.content}}</p>
+          </div>
+        </div>
+        <div class="post-options">
+          <button [ngStyle]="showPopup.isWatch && {'opacity': '1'}" (click)="watchPost(postIndex)">
+            <img src="/assets/images/watch.png" alt="watch">
+          </button>
+          <button [ngStyle]="showPopup.isLiked && {'opacity': '1'}" (click)="likePost(postIndex)">
+            <img src="/assets/images/like.png" alt="like">
+          </button>
+          <button (click)="removePost(postIndex)">
+            <img src="/assets/images/remove.png" alt="remove">
+          </button>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>
 
 
 <ng-template #noPopups>
   <li>
     <div class="noPosts">
-      <div class="post-text">
         <p>No new notifications.</p>
-      </div>
     </div>
   </li>
 </ng-template>

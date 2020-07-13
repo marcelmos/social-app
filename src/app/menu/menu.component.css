@@ -1,13 +1,14 @@
+/* MAIN STYLE */
 .menu-panel{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   z-index: 100;
   position: fixed;
   top: 0;
   bottom: 0;
+  font-family: New Cicle Fina;
 }
-
+/* Area style */
 .menu-block{
   width: 80%;
   height: 100vh;
@@ -16,19 +17,12 @@
   border-radius: 15px 15px 0 0;
   float: left;
 }
-
 .menu-closeArea{
   width: 20%;
   height: 100vh;
-  float: left;
+  display: inline-block;
 }
-
-.menu-buttons{
-  position: absolute;
-  bottom: 0;
-  width: 80%;
-}
-
+/* Top part */
 .btn-edit{
   display: block;
   padding: 10px;
@@ -38,58 +32,54 @@
   display: inline;
   justify-content: space-around;
 }
-
-.img-avatar{
+.profile>img{
   border: solid 5px #828282;
   border-radius: 50%;
   width: 50%;
   margin: 0 9vh;
 }
-
+/* Menu button list style */
 ul{
+  position: absolute;
+  bottom: 0;
+  width: 80%;
   padding-left: 0;
 }
 
 .nav-item{
   width: 100%;
   height: 8vh;
-  background: #252931;
   list-style-type: none;
   padding: 10px 15px;
   border-top: solid 2px #373B43;
-  font-family: New Cicle Fina;
-  justify-content: start;
+  /* justify-content: start; */
   display: flex;
 }
-
 .nav-item:hover{
   width: 100%;
   height: 8vh;
   transition: background-color .5s;
   background: #1B1F27;
 }
-
 .nav-item:hover .notification{
   transition: background-color .1s;
   background: #13535F;
 }
-
 .nav-item>img.menu-icon{
   margin-right: 20px;
   transform: scale(.75);
   opacity: .7;
   filter: contrast(.5);
 }
-
+/* Only sigout */
 .nav-item.signout{
   height: 100px;
   justify-content: space-around;
 }
-
 .nav-item.signout>img{
   transform: scale(.75);
 }
-
+/* On click/hover animation */
 .nav-item.signout:active>img, .nav-item:active>img, .menu-block>a:active>img.btn-edit{
   transition: transform .1s;
   transform: scale(.65);
@@ -100,7 +90,7 @@ ul{
   background: #797D85;
   border-radius: 12px;
 }
-
+/* Justify content (span(text) & notification) */
 .nav-item>.justify{
   width: 100%;
   margin: auto;
